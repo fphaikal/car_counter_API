@@ -63,13 +63,19 @@ wss.on("connection", async (ws, req) => {
         const [day, month, year] = dateParam.split("-").map(Number);
         filterDate = new Date(year, month - 1, day);
       } else {
-        ws.send(JSON.stringify({ error: "Invalid date format. Use DD-MM-YYYY." }));
+        ws.send(
+          JSON.stringify({ error: "Invalid date format. Use DD-MM-YYYY." })
+        );
         ws.close();
         return;
       }
     } else {
       const today = new Date();
-      filterDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      filterDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
+      );
     }
 
     const intervalId = setInterval(async () => {
@@ -97,7 +103,6 @@ wss.on("connection", async (ws, req) => {
     });
   }
 });
-
 
 // Start the server
 server.listen(PORT, () => {
