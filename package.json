@@ -13,7 +13,8 @@
     "ws": "^8.18.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npx prisma generate && node server.js"
   },
   "name": "api",
   "version": "1.0.0",
