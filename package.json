@@ -17,6 +17,7 @@
   },
   "scripts": {
     "postinstall": "prisma generate",
+    "build": "prisma generate",
     "start": "node server.js"
   },
   "name": "api",
