@@ -2,9 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "scripts": {
-        "start": "node server.js",
-        "postinstall": "prisma generate"
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["prisma/schema.prisma", "prisma/migrations/**", ".env"]
       }
     }
   ],
