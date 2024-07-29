@@ -16,7 +16,7 @@
     "prisma": "^5.17.0"
   },
   "scripts": {
-    "build": "prisma generate && node server.js"
+    "postinstall": "prisma generate"
   },
   "name": "api",
   "version": "1.0.0",
