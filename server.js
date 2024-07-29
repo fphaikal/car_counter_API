@@ -32,6 +32,16 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 2025;
 
 //-----------------Routes------------------//
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
+
+//handler if route not found
+app.use((req, res) => {
+  res.status(404).send({ error: "Not found" });
+});
+
 app.use("/api/users", usersLogin);
 app.use("/api/users", usersRegister);
 app.use("/api/users", userEdit);
