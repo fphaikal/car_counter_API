@@ -16,7 +16,7 @@
     "prisma": "^5.17.0"
   },
   "scripts": {
-    "start": "prisma generate && node server.js"
+    "build": "prisma generate && node server.js"
   },
   "name": "api",
   "version": "1.0.0",
